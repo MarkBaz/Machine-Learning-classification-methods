@@ -58,8 +58,6 @@ for train_index, test_index in kf.split(X):
     multi_clf = MultinomialNB()
     multi_clf.fit(X_train[:, discrete_features], y_train)
 
-    gauss_clf = GaussianNB()
-
     multi_probs = multi_clf.predict_proba(X_val[:, discrete_features])
 
     # Predict the class with the highest probability
